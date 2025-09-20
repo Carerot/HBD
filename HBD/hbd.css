@@ -1,0 +1,150 @@
+/* รีเซ็ตค่าเบื้องต้น */
+/* รีเซ็ตค่าเบื้องต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* พื้นหลังธีมวันเกิด */
+body {
+    margin:0 ;
+    background: linear-gradient(135deg, #f9d6e4, #fceabb, #d4fc79);
+    min-height: 100vh;
+    display: flex;  /*จัด content เป็นแนวตั้ง*/
+    flex-direction: column;  /*จัด content เป็นแนวตั้ง*/
+    justify-content: space-between; /*ดัน header-footer สุดขอบ*/
+}
+
+/* ส่วนหัว */
+header {
+    text-align: center;
+    padding: 30px;
+    background: #ff9a9e;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow:  0 4px 6px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+header h1{
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    margin: 0;
+}
+
+/*จัดแถว item*/
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap; /*เลือนจนเต็มบรรทัด*/
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/*ลิ๊งค์แต่ละอัน*/
+.navbar a{
+    text-decoration: none; /*เอาเส้นใต้ลิ้งค์ออก*/
+    color: #444;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out; /*ทำให้ effect hover นุ่มขึ้น*/
+}
+
+/*ตอนเอาเม้าชี้*/
+.navbar a:hover {
+    background: #ffb6c1;
+    color: white;
+    transform: scale(1.05);
+}
+
+.ryuslider {
+  overflow: hidden;          /* ซ่อนส่วนที่เกิน */
+  background: rgba(255,255,255,0.6);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 30px auto;
+  width: 90%;                /* ขนาดแถบเลื่อน */
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollLeft 20s linear infinite; /* 20s = ความเร็ว */
+}
+
+.slider-track img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid #ff9a9e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.slider-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* เลื่อนครึ่งนึง (loop ได้) */
+  }
+}
+
+p{
+    text-align: center;
+    font-size: 1rem;
+    margin: 3px;
+}
+
+h3{
+    color: #444;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    margin: 5px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background: #ffdde1;
+    border-top: 2px solid #f08080;
+}
+
+footer a {
+    color: #d63384;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #ff4d6d;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar nav {
+        display: flex;
+        flex-direction: column;
+    }
+}
